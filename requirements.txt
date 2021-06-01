@@ -1,6 +1,4 @@
-django
 gunicorn
-django-heroku
 Babel
 backcall
 flake8
