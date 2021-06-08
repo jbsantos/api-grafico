@@ -1,8 +1,8 @@
-Flask==1.1.1
-Flask-Cors==3.0.9
-flask-shell-ipython==0.4.1
-gunicorn==20.1.0
-Jinja2==2.11.3
+Flask
+Flask-Cors
+flask-shell-ipython
+gunicorn
+Jinja2
 matplotlib
 numpy
 numpydoc
@@ -11,7 +11,7 @@ requests
 requests-toolbelt
 KMeans
 pandas 
-json5==0.9.5
-jsonschema==3.2.0
+json5
+jsonschema
 sklearn
 
