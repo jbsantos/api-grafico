@@ -13,7 +13,8 @@ def objGrafico():
                 return obj.tolist()
             return json.JSONEncoder.default(self, obj)
 
-    url = "https://run.mocky.io/v3/043a3b23-4e31-4000-9073-dec4d6f97054"
+    #url = "https://run.mocky.io/v3/043a3b23-4e31-4000-9073-dec4d6f97054"
+    url = "https://run.mocky.io/v3/25ccb1d4-ae0c-404b-af83-6bd8dbdae32d"
     infoNotas = salvaDados()
     a = np.array(kmeansLabel())
     img_json = np.array(jsonImagem())
