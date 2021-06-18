@@ -37,8 +37,8 @@ def salvaDados():
     #r = requests.get("https://run.mocky.io/v3/043a3b23-4e31-4000-9073-dec4d6f97054").json()
     r = requests.get("https://run.mocky.io/v3/25ccb1d4-ae0c-404b-af83-6bd8dbdae32d").json()
     data = np.array(r)
-    dataFrame = pd.DataFrame(data, columns = ['id', 'backend', 'frontEnd', 'cv', 'Entrevista'])
-
+    dataFrame = pd.DataFrame(data, columns = ['id', 'Desafio Questionario', 'Desafio Desenvolvimento'])
+    #dataFrame = pd.DataFrame(data, columns = ['id', 'backend', 'frontEnd', 'cv', 'Entrevista'])
 
     #print(dataFrame)
     json = dataFrame.to_json()
@@ -77,7 +77,8 @@ def kmeansLabel():
     #apto = pd.read_csv('/home/jorge/Documentos/python/api/aptoClassificacao/Apto_KNN.csv')
     apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
     #print(apto)
-    X = apto.iloc[:, 1:5].values
+    X = apto.iloc[:, 1:3].values
+    #X = apto.iloc[:, 1:5].values
     # print(X)
     # kmeans = KMeans(n_clusters=4, init='ndarray[[2,2],[2,8],[8,2],[8,8]]')
     kmeans = KMeans(n_clusters=4, init='random')
