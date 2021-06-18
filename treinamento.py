@@ -34,7 +34,8 @@ def salvaDados():
     import re
 
     #r = requests.get("https://run.mocky.io/v3/4e722972-ea21-466c-860d-4e08c3f5c4eb").json()
-    r = requests.get("https://run.mocky.io/v3/043a3b23-4e31-4000-9073-dec4d6f97054").json()
+    #r = requests.get("https://run.mocky.io/v3/043a3b23-4e31-4000-9073-dec4d6f97054").json()
+    r = requests.get("https://run.mocky.io/v3/25ccb1d4-ae0c-404b-af83-6bd8dbdae32d").json()
     data = np.array(r)
     dataFrame = pd.DataFrame(data, columns = ['id', 'backend', 'frontEnd', 'cv', 'Entrevista'])
 
