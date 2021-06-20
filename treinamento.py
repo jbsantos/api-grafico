@@ -35,35 +35,56 @@ def salvaDados():
 
     #r = requests.get("https://run.mocky.io/v3/4e722972-ea21-466c-860d-4e08c3f5c4eb").json()
     #r = requests.get("https://run.mocky.io/v3/043a3b23-4e31-4000-9073-dec4d6f97054").json()
-    r = requests.get("https://run.mocky.io/v3/25ccb1d4-ae0c-404b-af83-6bd8dbdae32d").json()
-    data = np.array(r)
-    dataFrame = pd.DataFrame(data, columns = ['id', 'Desafio Questionario', 'Desafio Desenvolvimento'])
+    #r = requests.get("https://run.mocky.io/v3/25ccb1d4-ae0c-404b-af83-6bd8dbdae32d").json()
+    #data = np.array(r)
+    #dataFrame = pd.DataFrame(data, columns = ['id', 'Desafio Questionario', 'Desafio Desenvolvimento'])
     #dataFrame = pd.DataFrame(data, columns = ['id', 'backend', 'frontEnd', 'cv', 'Entrevista'])
 
     #print(dataFrame)
-    json = dataFrame.to_json()
+    #json = dataFrame.to_json()
     #print(json)
-    json_split = dataFrame.to_json(orient ='split')
+    #json_split = dataFrame.to_json(orient ='split')
     #print("json_split = ", json_split, "\n")
 
-    json_records = dataFrame.to_json(orient ='records')
+    #json_records = dataFrame.to_json(orient ='records')
     #print("json_records = ", json_records, "\n")
 
-    json_index = dataFrame.to_json(orient ='index')
+    #json_index = dataFrame.to_json(orient ='index')
     #print("json_index = ", json_index, "\n")
 
-    json_columns = dataFrame.to_json(orient ='columns')
+    #json_columns = dataFrame.to_json(orient ='columns')
     #print("json_columns = ", json_columns, "\n")
 
     #print("json_values = ", json_values, "\n")
 
-    json_table = dataFrame.to_json(orient ='table')
+    #json_table = dataFrame.to_json(orient ='table')
     #print("json_table = ", json_table, "\n")
 
-    dados = pd.DataFrame(dataFrame)
+    #dados = pd.DataFrame(dataFrame)
+    #df = pd.DataFrame(dataFrame)
+    #df.to_csv(index=False)
+    #df.to_csv('aptoClassificacao/Apto_KNN.csv', index=False, encoding='utf-8')
+
+    #treinamento.objGrafico()
+    data = []
+    print(teste)
+    r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
+    #notas = r['data'][0]['candidatoNotasDtoList']
+    
+    for idx, val in enumerate(r['data']):
+        #data = val['candidatoNotasDtoList']
+        data.append(val['candidatoNotasDtoList'][0])
+        #print(data)
+        #print(idx, val)
+    #data1 = np.array(data)
+    #print(data1)
+    dataFrame = pd.DataFrame(data)
+    #print(dataFrame)
     df = pd.DataFrame(dataFrame)
+    print(df)
     df.to_csv(index=False)
-    df.to_csv('aptoClassificacao/Apto_KNN.csv', index=False, encoding='utf-8')
+    df.to_csv('aptoClassificacao/Apto_KNN1.csv', index=False, encoding='utf-8')        
+    
     return r
     #apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
     #json_values = apto.to_json(orient ='values')
@@ -77,7 +98,7 @@ def kmeansLabel():
     #apto = pd.read_csv('/home/jorge/Documentos/python/api/aptoClassificacao/Apto_KNN.csv')
     apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
     #print(apto)
-    X = apto.iloc[:, 1:3].values
+    X = apto.iloc[:, 2:5].values
     #X = apto.iloc[:, 1:5].values
     # print(X)
     # kmeans = KMeans(n_clusters=4, init='ndarray[[2,2],[2,8],[8,2],[8,8]]')
@@ -97,7 +118,7 @@ def kmeansLabel():
     import matplotlib.pyplot as plt
     plt.scatter(X[:, 0], X[:,1], s= 100 , c = kmeans.labels_)
     plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:, 1],  s=300, c= 'red', label = 'Centroids')
-    plt.title('APTO Clusters Front vs Back')
+    plt.title('APTO Clusters Questionário vs Programação')
     plt.xlabel('Questionario')
     plt.ylabel('Programacao')
     plt.legend()
