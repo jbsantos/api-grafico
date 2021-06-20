@@ -50,7 +50,7 @@ def salvaDados():
     df = pd.DataFrame(dataFrame)
     print(df)
     df.to_csv(index=False)
-    df.to_csv('aptoClassificacao/Apto_KNN1.csv', index=False, encoding='utf-8')  
+    df.to_csv('aptoClassificacao/Apto_KNN.csv', index=False, encoding='utf-8')  
     return r
     #apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
     #json_values = apto.to_json(orient ='values')
@@ -64,7 +64,7 @@ def kmeansLabel():
     #apto = pd.read_csv('/home/jorge/Documentos/python/api/aptoClassificacao/Apto_KNN.csv')
     apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
     #print(apto)
-    X = apto.iloc[:, 1:3].values
+    X = apto.iloc[:, 2:4].values
     #X = apto.iloc[:, 1:5].values
     # print(X)
     # kmeans = KMeans(n_clusters=4, init='ndarray[[2,2],[2,8],[8,2],[8,8]]')
