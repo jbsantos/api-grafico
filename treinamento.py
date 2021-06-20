@@ -67,7 +67,7 @@ def kmeansLabel():
     #X = apto.iloc[:, 1:5].values
     # print(X)
     # kmeans = KMeans(n_clusters=4, init='ndarray[[2,2],[2,8],[8,2],[8,8]]')
-    kmeans = KMeans(n_clusters=4, init='random')
+    kmeans = KMeans(n_clusters=2, init='random')
     distancias = kmeans.fit_transform(X)
     #print(distancias)
     legendas = kmeans.labels_
