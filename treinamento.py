@@ -63,7 +63,7 @@ def kmeansLabel():
     #apto = pd.read_csv('/home/jorge/Documentos/python/api/aptoClassificacao/Apto_KNN.csv')
     apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
     #print(apto)
-    X = apto.iloc[:, 1:3].values
+    X = apto.iloc[:, 2:4].values
     #X = apto.iloc[:, 1:5].values
     # print(X)
     # kmeans = KMeans(n_clusters=4, init='ndarray[[2,2],[2,8],[8,2],[8,8]]')
@@ -82,7 +82,7 @@ def kmeansLabel():
 
     import matplotlib.pyplot as plt
     plt.scatter(X[:, 0], X[:,1], s= 100 , c = kmeans.labels_)
-    plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:, 1],  s=100, c= 'red', label = 'Centroids')
+    plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:, 1],  s=100, c= 'blue', label = 'Centroids')
     plt.title('APTO Clusters Questionário vs Programação')
     plt.xlabel('Questionario')
     plt.ylabel('Programacao')
