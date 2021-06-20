@@ -67,7 +67,7 @@ def kmeansLabel():
     #X = apto.iloc[:, 1:5].values
     # print(X)
     # kmeans = KMeans(n_clusters=4, init='ndarray[[2,2],[2,8],[8,2],[8,8]]')
-    kmeans = KMeans(n_clusters=2, init='random')
+    kmeans = KMeans(n_clusters=0, init='random')
     distancias = kmeans.fit_transform(X)
     #print(distancias)
     legendas = kmeans.labels_
@@ -83,7 +83,7 @@ def kmeansLabel():
     import matplotlib.pyplot as plt
     plt.scatter(X[:, 0], X[:,1], s= 100 , c = kmeans.labels_)
     plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:, 1],  s=300, c= 'red', label = 'Centroids')
-    plt.title('APTO Clusters Front vs Back')
+    plt.title('APTO Clusters Questionário vs Programação')
     plt.xlabel('Questionario')
     plt.ylabel('Programacao')
     plt.legend()
