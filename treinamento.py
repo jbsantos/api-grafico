@@ -63,7 +63,7 @@ def kmeansLabel():
     #apto = pd.read_csv('/home/jorge/Documentos/python/api/aptoClassificacao/Apto_KNN.csv')
     apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
     #print(apto)
-    X = apto.iloc[:, 2:4].values
+    X = apto.iloc[:, 2:5].values
     #X = apto.iloc[:, 1:5].values
     # print(X)
     # kmeans = KMeans(n_clusters=4, init='ndarray[[2,2],[2,8],[8,2],[8,8]]')
