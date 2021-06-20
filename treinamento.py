@@ -34,7 +34,6 @@ def salvaDados():
     import re
 
     data = []
-    print(teste)
     r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
     #notas = r['data'][0]['candidatoNotasDtoList']
     
