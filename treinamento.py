@@ -74,8 +74,8 @@ def kmeansLabel():
     #print(legendas.shape)
 
 
-    ts = legendas.tostring()
-    legenda_texto = np.fromstring(ts, dtype=int)
+    #ts = legendas.tostring()
+    #legenda_texto = np.fromstring(ts, dtype=int)
     #print(legenda_texto.to_json())
     # print ("\n======\n", kmeans.cluster_centers_, "\n======\n")
     with  open("kmeans_n_cluster4_padrao.pkl", "wb") as file: pickle.dump(kmeans, file)
