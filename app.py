@@ -23,7 +23,8 @@ def verificar():
 
 @app.route('/dados', methods=['GET'])
 def dados():
-	return treinamento.objGrafico()
+	#return treinamento.objGrafico()
+	return "string"
     #return render_template('template.html',classe='0')
 
 if __name__ == "__main__":
