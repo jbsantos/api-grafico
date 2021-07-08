@@ -1,7 +1,5 @@
-import numpy as np
-import os
 import treinamento
-from flask import Flask, request, render_template, make_response
+from flask import Flask, request, render_template
 from flask_cors import CORS
 
 #import pickle
@@ -29,4 +27,5 @@ def dados():
     #return render_template('template.html',classe='0')
 
 if __name__ == "__main__":
-        app.run(debug=True)
+        #app.run(debug=True)
+	app.run()
