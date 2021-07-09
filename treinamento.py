@@ -1,8 +1,5 @@
 from sklearn.cluster import KMeans
 
-
-
-
 def objGrafico():
     import numpy as np
     import json
@@ -13,7 +10,6 @@ def objGrafico():
                 return obj.tolist()
             return json.JSONEncoder.default(self, obj)
 
-    #url = "https://run.mocky.io/v3/043a3b23-4e31-4000-9073-dec4d6f97054"
     url = "https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado"
     infoNotas = salvaDados()
     a = np.array(kmeansLabel())
@@ -21,8 +17,6 @@ def objGrafico():
     json_dump = json.dumps({'legenda': a, 'imagem': img_json, 'infoNotas': infoNotas, 'url': url}, cls=NumpyEncoder)
 
     return json_dump
-
-
 
 def salvaDados():
 
@@ -40,10 +34,7 @@ def salvaDados():
     for idx, val in enumerate(r['data']):
         #data = val['candidatoNotasDtoList']
         data.append(val['candidatoNotasDtoList'][0])
-        #print(data)
-        #print(idx, val)
-    #data1 = np.array(data)
-    #print(data1)
+     
     dataFrame = pd.DataFrame(data)
     #print(dataFrame)
     df = pd.DataFrame(dataFrame)
@@ -51,33 +42,20 @@ def salvaDados():
     df.to_csv(index=False)
     df.to_csv('aptoClassificacao/Apto_KNN.csv', index=False, encoding='utf-8')  
     return r
-    #apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
-    #json_values = apto.to_json(orient ='values')
-    #print(json_values)
+ 
 
 def kmeansLabel():
 
     import numpy as np
     import pickle
     import pandas as pd
-    #apto = pd.read_csv('/home/jorge/Documentos/python/api/aptoClassificacao/Apto_KNN.csv')
     apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
-    #print(apto)
     X = apto.iloc[:, 2:4].values
-    #X = apto.iloc[:, 1:5].values
-    # print(X)
-    # kmeans = KMeans(n_clusters=4, init='ndarray[[2,2],[2,8],[8,2],[8,8]]')
+
     kmeans = KMeans(n_clusters=2, init='random')
     distancias = kmeans.fit_transform(X)
-    #print(distancias)
     legendas = kmeans.labels_
-    #print(legendas.shape)
 
-
-    #ts = legendas.tostring()
-    #legenda_texto = np.fromstring(ts, dtype=int)
-    #print(legenda_texto.to_json())
-    # print ("\n======\n", kmeans.cluster_centers_, "\n======\n")
     with  open("kmeans_n_cluster4_padrao.pkl", "wb") as file: pickle.dump(kmeans, file)
 
     import matplotlib.pyplot as plt
