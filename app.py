@@ -25,8 +25,6 @@ def verificar():
 def dados():
 	return treinamento.objGrafico()
 	
-    #return render_template('template.html',classe='0')
-
 if __name__ == "__main__":
         #app.run(debug=True)
 	app.run()
