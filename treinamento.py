@@ -33,6 +33,7 @@ def salvaDados():
     #r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
     r = requests.get("https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61").json()
     #r = requests.get("https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e").json()
+    data = []
     notas = []
     notas = r['data']
     #print(notas)
