@@ -24,10 +24,10 @@ import matplotlib.pyplot as plt
 plt.scatter(X[:, 0], X[:,1], s= 50 , c = kmeans.labels_)
 plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:, 1],  s=300, c= 'red', label = 'Centroids')
 plt.title('APTO Clusters Front vs Back')
-plt.xlabel('FrontEnd')
-plt.ylabel('BackEnd')
+plt.xlabel('Programação')
+plt.ylabel('Questionário')
 plt.legend()
-plt.savefig("/home/jorge/Documentos/python/api/static/grafico.jpeg")
+plt.savefig("static/grafico.jpeg")
 
 plt.show()
 
