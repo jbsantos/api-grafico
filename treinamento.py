@@ -14,7 +14,7 @@ def objGrafico():
     #com dois objeto e o iddesafio
     #url = "https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61"
     #com apensas um objeto
-    #url = "https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e"
+    url = "https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e"
     
     infoNotas = salvaDados()
     a = np.array(kmeansLabel())
