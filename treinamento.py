@@ -26,22 +26,22 @@ def salvaDados():
     import requests
     import pandas as pd
     import json
-    import requests
     import re
 
     data = []
     #r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
     r = requests.get(" https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61").json()
-    notas = r['data'][0]['candidatoNotasDtoList']
-    print(notas)
+    #notas = r['data'][0]['candidatoNotasDtoList']
+    #print(notas)
     for idx, val in enumerate(r['data']):
         #data = val['candidatoNotasDtoList']
         data.append(val['candidatoNotasDtoList'][0])
-        print(data)
+     
     dataFrame = pd.DataFrame(data)
-    print(dataFrame)
+    print(dataFrame + "teste1")
+    print("chegou")
     df = pd.DataFrame(dataFrame)
-    print(df)
+    print(df + "df teste")
     df.to_csv(index=False)
     df.to_csv('aptoClassificacao/Apto_KNN.csv', index=False, encoding='utf-8')  
     return r
