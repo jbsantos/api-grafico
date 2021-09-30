@@ -37,7 +37,7 @@ def salvaDados():
     print(notas)
     print("notas")
     data = r['data']
-    for k, v in data.items():
+    for k, v in data:
         print(k, v)
         
     for idx, val in enumerate(r['data']):
