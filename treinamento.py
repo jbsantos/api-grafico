@@ -36,12 +36,11 @@ def salvaDados():
     notas = r['data']
     print(notas)
     print("notas")
-    data = r['data']
-    for k, v in data:
-        print(k, v)
+    data = []
+   
         
     for idx, val in enumerate(r['data']):
-        #data = val['candidatoNotasDtoList']
+        data = val['candidatoNotasDtoList']
         data.append(val['candidatoNotasDtoList'])
        
     
