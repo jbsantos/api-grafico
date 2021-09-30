@@ -66,7 +66,7 @@ def kmeansLabel():
     apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv1')
     X = apto.iloc[:, 2:4].values
 
-    kmeans = KMeans(n_clusters=2, init='random')
+    kmeans = KMeans(n_clusters=4, init='random')
     distancias = kmeans.fit_transform(X)
     legendas = kmeans.labels_
 
