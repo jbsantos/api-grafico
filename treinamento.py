@@ -11,8 +11,8 @@ def objGrafico():
             return json.JSONEncoder.default(self, obj)
 
     #url = "https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado"
-    #url = "https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61"
-    url = "https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e"
+    url = "https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61"
+    #url = "https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e"
     
     infoNotas = salvaDados()
     a = np.array(kmeansLabel())
@@ -31,24 +31,20 @@ def salvaDados():
 
     
     #r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
-    #r = requests.get(" https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61").json()
-    r = requests.get("https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e").json()
+    r = requests.get("https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61").json()
+    #r = requests.get("https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e").json()
+    notas = []
     notas = r['data']
     #print(notas)
     #print("notas")
-    data = []
     #print(notas[0]['candidatoNotasDtoList'])   
         
     for idx, val in enumerate(notas[0]['candidatoNotasDtoList']):
         
         data.append(val)
         print(val)
-       
-    
-    print(data)
+   
     dataFrame = pd.DataFrame(data)
-    print(dataFrame)
-    print("chegou")
     df = pd.DataFrame(dataFrame)
     print(df)
     print("df chegou")
@@ -64,7 +60,7 @@ def kmeansLabel():
     import pickle
     import pandas as pd
     apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv1')
-    X = apto.iloc[:, 1:4].values
+    X = apto.iloc[:, 2:4].values
 
     kmeans = KMeans(n_clusters=4, init='random')
     distancias = kmeans.fit_transform(X)
@@ -74,7 +70,7 @@ def kmeansLabel():
 
     import matplotlib.pyplot as plt
     plt.scatter(X[:, 0], X[:,1], s= 100 , c = kmeans.labels_)
-    plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:, 1],  s=300, c= 'blue', label = 'Centroids')
+    plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:, 1],  s=50, c= 'blue', label = 'Centroids')
     plt.title('APTO Clusters Questionário vs Programação')
     plt.xlabel('Questionario')
     plt.ylabel('Programacao')
