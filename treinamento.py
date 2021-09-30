@@ -38,12 +38,14 @@ def salvaDados():
         data.append(val['candidatoNotasDtoList'][0])
      
     dataFrame = pd.DataFrame(data)
-    print(dataFrame + "teste1")
+    print(dataFrame)
     print("chegou")
     df = pd.DataFrame(dataFrame)
-    print(df + "df teste")
+    print(df)
+    print("df chegou")
     df.to_csv(index=False)
     df.to_csv('aptoClassificacao/Apto_KNN.csv', index=False, encoding='utf-8')  
+    print(df)
     return r
  
 
