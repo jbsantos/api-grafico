@@ -34,12 +34,12 @@ def salvaDados():
     r = requests.get(" https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61").json()
     notas = r['data'][0]['candidatoNotasDtoList']
     print(notas)
-    for idx, val in enumerate(r['data'][0]):
+    for idx, val in enumerate(r['data']):
         #data = val['candidatoNotasDtoList']
         data.append(val['candidatoNotasDtoList'][0])
-   
+        print(data)
     dataFrame = pd.DataFrame(data)
-    #print(dataFrame)
+    print(dataFrame)
     df = pd.DataFrame(dataFrame)
     print(df)
     df.to_csv(index=False)
