@@ -10,9 +10,7 @@ def objGrafico():
                 return obj.tolist()
             return json.JSONEncoder.default(self, obj)
 
-    #url = "https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado"
-    url = "https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61"
-    
+    url = "https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado"
     infoNotas = salvaDados()
     a = np.array(kmeansLabel())
     img_json = np.array(jsonImagem())
@@ -30,8 +28,7 @@ def salvaDados():
     import re
 
     data = []
-    #r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
-    r = requests.get(" https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61").json()
+    r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
     #notas = r['data'][0]['candidatoNotasDtoList']
     
     for idx, val in enumerate(r['data']):
