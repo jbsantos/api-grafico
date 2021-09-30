@@ -38,7 +38,7 @@ def salvaDados():
     print("notas")
     for idx, val in enumerate(r['data']):
         #data = val['candidatoNotasDtoList']
-        data.append(val['candidatoNotasDtoList'][0])
+        data.append(val['candidatoNotasDtoList'][idx])
      
     dataFrame = pd.DataFrame(data)
     print(dataFrame)
