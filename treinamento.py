@@ -36,7 +36,7 @@ def salvaDados():
     print("notas")
     for idx, val in enumerate(r['data']):
         #data = val['candidatoNotasDtoList']
-        data.append(val['candidatoNotasDtoList'][0])
+        data.append(val['candidatoNotasDtoList'])
      
     dataFrame = pd.DataFrame(data)
     print(dataFrame)
@@ -55,7 +55,7 @@ def kmeansLabel():
     import numpy as np
     import pickle
     import pandas as pd
-    apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv')
+    apto = pd.read_csv('aptoClassificacao/Apto_KNN.csv1')
     X = apto.iloc[:, 2:4].values
 
     kmeans = KMeans(n_clusters=2, init='random')
