@@ -31,8 +31,9 @@ def salvaDados():
     data = []
     #r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
     r = requests.get(" https://run.mocky.io/v3/3b892b3c-3ca8-42db-92d9-b2c164064c61").json()
-    #notas = r['data'][0]['candidatoNotasDtoList']
+    notas = r['data']
     print(notas)
+    print("notas")
     for idx, val in enumerate(r['data']):
         #data = val['candidatoNotasDtoList']
         data.append(val['candidatoNotasDtoList'][0])
