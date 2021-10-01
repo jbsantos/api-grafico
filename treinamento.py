@@ -71,7 +71,7 @@ def kmeansLabel():
 
     import matplotlib.pyplot as plt
     plt.scatter(X[:, 0], X[:,1], s= 100 , c = kmeans.labels_)
-    plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:, 1],  s=50, c= 'blue', label = 'Centroids')
+    plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:, 1],  s=100, c= 'red', label = 'Centroids')
     plt.title('APTO Clusters Questionário vs Programação')
     plt.xlabel('Questionario')
     plt.ylabel('Programacao')
