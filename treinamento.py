@@ -46,10 +46,8 @@ def salvaDados():
         if (val['idDesafioTecnico'] == 9):
             #print(val['idDesafioTecnico'])
                 for id, nt in enumerate(val['candidatoNotasDtoList']):
-                #print(nt)
-
-            #for id, nt in enumerate(idx):  
-                data.append(nt)
+                    print(nt)
+                    data.append(nt)
                 
     print(data)
         #print(data)
