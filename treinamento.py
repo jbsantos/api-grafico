@@ -34,9 +34,9 @@ def salvaDados():
     #r = requests.get("https://run.mocky.io/v3/bd659a0b-5b5f-4989-b47d-657076841398").json()
     #r = requests.get("https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e").json()
    
-notas = []
-notas = r['data']
-data = []
+    notas = []
+    notas = r['data']
+    data = []
 
     for idx, val in enumerate(notas):
         data.append(val['candidatoNotasDtoList'])
