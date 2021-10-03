@@ -10,8 +10,8 @@ def objGrafico():
                 return obj.tolist()
             return json.JSONEncoder.default(self, obj)
 
-    #url = "https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado"
-    url = "https://run.mocky.io/v3/bd659a0b-5b5f-4989-b47d-657076841398"
+    url = "https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado"
+    #url = "https://run.mocky.io/v3/bd659a0b-5b5f-4989-b47d-657076841398"
     #url = "https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e"
     
     infoNotas = salvaDados()
@@ -30,8 +30,8 @@ def salvaDados():
     import re
 
     
-    #r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
-    r = requests.get("https://run.mocky.io/v3/bd659a0b-5b5f-4989-b47d-657076841398").json()
+    r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
+    #r = requests.get("https://run.mocky.io/v3/bd659a0b-5b5f-4989-b47d-657076841398").json()
     #r = requests.get("https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e").json()
     data = []
     notas = []
