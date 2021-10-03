@@ -43,7 +43,7 @@ def salvaDados():
         
         #for count, nota in enumerate(val['candidatoNotasDtoList']):
         
-        if (val['idDesafioTecnico'] == 9):
+        if (val['idDesafioTecnico'] <= 40):
             #print(val['idDesafioTecnico'])
                 for id, nt in enumerate(val['candidatoNotasDtoList']):
                     print(nt)
