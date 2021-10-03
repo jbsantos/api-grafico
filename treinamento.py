@@ -31,17 +31,27 @@ def salvaDados():
 
     
     r = requests.get("https://apto-api-rest-ifpe.herokuapp.com/api/desafio-tecnico/rankearCandidatosSimplificado").json()
-    #r = requests.get("https://run.mocky.io/v3/bd659a0b-5b5f-4989-b47d-657076841398").json()
+    #r = requests.get("https://run.mocky.io/v3/20963c21-73ca-406c-b12c-141c63aef532").json()
     #r = requests.get("https://run.mocky.io/v3/61703339-173a-4f8d-b235-edfe2405242e").json()
-   
-    notas = []
-    notas = r['data']
+notas = r['data']
+    #print(notas)
+    #print("notas")
     data = []
-
+#print(notas[0]['candidatoNotasDtoList'])   
+        
     for idx, val in enumerate(notas):
-        data.append(val['candidatoNotasDtoList'])
-        print(data)
-   
+        
+        #for count, nota in enumerate(val['candidatoNotasDtoList']):
+        
+        if (val['idDesafioTecnico'] == 9):
+            #print(val['idDesafioTecnico'])
+            for id, nt in enumerate(val['candidatoNotasDtoList']):
+                #print(nt)
+
+            #for id, nt in enumerate(idx):  
+                data.append(nt)
+                
+
     dataFrame = pd.DataFrame(data)
     df = pd.DataFrame(dataFrame)
     print(df)
