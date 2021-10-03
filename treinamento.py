@@ -62,7 +62,7 @@ def salvaDados():
     #print(df)
     #print("df chegou")
     df.to_csv(index=False)
-    df.to_csv('Apto_KNN.csv1', index=False, encoding='utf-8')  
+    df.to_csv('aptoClassificacao/Apto_KNN.csv1', index=False, encoding='utf-8')  
     print(df)
     return r
  
