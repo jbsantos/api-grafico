@@ -40,7 +40,7 @@ def salvaDados():
     #print("notas")
     #print(notas[0]['candidatoNotasDtoList'])   
         
-    for idx, val in enumerate(notas[0]['candidatoNotasDtoList']):
+    for idx, val in enumerate(notas['candidatoNotasDtoList']):
         
         data.append(val)
         print(val)
