@@ -36,7 +36,6 @@ def salvaDados():
 notas = r['data']
     #print(notas)
     #print("notas")
-    data = []
 #print(notas[0]['candidatoNotasDtoList'])   
         
     for idx, val in enumerate(notas):
