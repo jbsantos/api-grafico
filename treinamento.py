@@ -43,11 +43,14 @@ def salvaDados():
         
         #for count, nota in enumerate(val['candidatoNotasDtoList']):
         
-        if (val['idDesafioTecnico'] <= 40):
+        if (val['idDesafioTecnico'] <= 1000):
             #print(val['idDesafioTecnico'])
                 for id, nt in enumerate(val['candidatoNotasDtoList']):
-                    print(nt)
-                    data.append(nt)
+                    if nt['pontuacao'] is None or nt['nota1'] is None or nt['nota2'] is None :
+                        print("null")
+                    else:
+                        #print(nt)
+                        data.append(nt)
                 
     print(data)
         #print(data)
